@@ -13,6 +13,8 @@ RUN set -ex; \
     ; \
     rm -rf /var/lib/apt/lists/*;
 
+COPY /scripts/start-collabora-online.sh /
+
 USER 100
 
 HEALTHCHECK CMD nc -z localhost 9980 || exit 1
